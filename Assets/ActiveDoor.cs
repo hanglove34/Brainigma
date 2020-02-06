@@ -26,8 +26,8 @@ public class ActiveDoor : MonoBehaviour
         if (isActivate)
         {
             Debug.Log(rightDoor.transform.localPosition.z);
-            if (leftDoor.transform.localPosition.x < 2.3)
-                leftDoor.transform.localPosition += transform.right * Time.deltaTime;
+            if (leftDoor.transform.localPosition.z > -1.3)
+                leftDoor.transform.localPosition += transform.up * Time.deltaTime;
             if (rightDoor.transform.localPosition.z < 9.3)
                 rightDoor.transform.localPosition -= transform.up * Time.deltaTime;
         }
