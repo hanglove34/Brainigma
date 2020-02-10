@@ -8,14 +8,6 @@ public class ActiveDoor : MonoBehaviour
     public bool isActivate = false;
     public GameObject rightDoor;
     public GameObject leftDoor;
-    public Animator anim;
-
-    void Awake()
-    {
-        anim = GetComponent<Animator>();
-        //  anim.Play("movingPlatform");
-    }
-
 
     void Update()
     {
@@ -25,7 +17,6 @@ public class ActiveDoor : MonoBehaviour
         }
         if (isActivate)
         {
-            Debug.Log(rightDoor.transform.localPosition.z);
             if (leftDoor.transform.localPosition.z > -1.3)
                 leftDoor.transform.localPosition += transform.up * Time.deltaTime;
             if (rightDoor.transform.localPosition.z < 9.3)
